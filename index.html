@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Brayden's Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #0f172a;
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .card {
+      background: #020617;
+      border-radius: 16px;
+      padding: 24px 20px 20px;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+      border: 1px solid #1f2937;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: 4px;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #9ca3af;
+    }
+
+    .subtitle {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .input-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    input[type="password"] {
+      flex: 1;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid #4b5563;
+      background: #020617;
+      color: #e5e7eb;
+      font-size: 0.95rem;
+    }
+
+    input[type="password"]:focus {
+      outline: 2px solid #22c55e;
+      outline-offset: 1px;
+      border-color: transparent;
+    }
+
+    button {
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: none;
+      background: #22c55e;
+      color: #022c22;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    button:hover {
+      filter: brightness(1.05);
+    }
+
+    .error {
+      color: #f97373;
+      font-size: 0.8rem;
+      margin-top: 6px;
+      min-height: 1em;
+    }
+
+    #site-content {
+      display: none;
+      margin-top: 8px;
+    }
+
+    .welcome {
+      margin-bottom: 16px;
+    }
+
+    .welcome-text {
+      font-size: 1.05rem;
+      margin-top: 4px;
+      color: #d1d5db;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9ca3af;
+      margin-bottom: 8px;
+    }
+
+    .message-list {
+      margin-top: 4px;
+      max-height: 400px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .message {
+      margin-bottom: 12px;
+    }
+
+    .meta {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-bottom: 3px;
+    }
+
+    .label {
+      font-weight: 600;
+      color: #a5b4fc;
+    }
+
+    .bubble {
+      display: inline-block;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #022c22;
+      padding: 10px 12px;
+      border-radius: 16px 16px 4px 16px;
+      font-size: 0.95rem;
+      max-width: 100%;
+      line-height: 1.35;
+    }
+
+    .bubble small {
+      display: block;
+      margin-top: 4px;
+      opacity: 0.9;
+      font-size: 0.8rem;
+    }
+
+    .footer-note {
+      margin-top: 12px;
+      font-size: 0.7rem;
+      color: #6b7280;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- PASSWORD SCREEN -->
+    <div id="lock-screen">
+      <h1>Brayden's Website</h1>
+      <p class="subtitle">Enter the secret password from Uncle Brian.</p>
+
+      <div class="input-row">
+        <input
+          id="password"
+          type="password"
+          placeholder="Password"
+          autocomplete="off"
+        />
+        <button onclick="checkPassword()">Enter</button>
+      </div>
+      <div id="error" class="error"></div>
+    </div>
+
+    <!-- MAIN SITE CONTENT (HIDDEN UNTIL PASSWORD IS CORRECT) -->
+    <div id="site-content">
+      <div class="welcome">
+        <h2>Welcome to Brayden's website 🎉</h2>
+        <p class="welcome-text">
+          These are your weekly texts from Uncle Brian — little reminders that
+          you’re awesome and capable of big things.
+        </p>
+      </div>
+
+      <div>
+        <div class="section-title">Texts from Uncle Brian</div>
+        <div class="message-list">
+          <!-- ✨ WEEKLY MESSAGES START HERE ✨ -->
+          <!-- Copy the whole .message block below and update the date & text each week -->
+
+          <div class="message">
+            <div class="meta">
+              <span class="label">From Uncle Brian</span> · 2025-12-03
+            </div>
+            <div class="bubble">
+              Brayden, remember: every champion was once a beginner who didn’t
+              quit. Keep showing up, even on the tough days — that’s how you
+              become unstoppable.
+              <small>Love you, proud of you always. 💙</small>
+            </div>
+          </div>
+
+          <!-- Example future messages you can keep or replace -->
+
+          <div class="message">
+            <div class="meta">
+              <span class="label">From Uncle Brian</span> · 2025-12-10
+            </div>
+            <div class="bubble">
+              You don’t have to be perfect; you just have to be brave enough to
+              try. Every small step you take adds up to something big.
+              <small>I believe in you more than you know. – Uncle Brian</small>
+            </div>
+          </div>
+
+          <div class="message">
+            <div class="meta">
+              <span class="label">From Uncle Brian</span> · 2025-12-17
+            </div>
+            <div class="bubble">
+              When things feel hard, that’s usually a sign you’re leveling up.
+              Keep going — future you is going to be so grateful you didn’t give
+              up.
+              <small>One day at a time, kiddo. 💪</small>
+            </div>
+          </div>
+
+          <!-- ✨ WEEKLY MESSAGES END HERE ✨ -->
+        </div>
+      </div>
+
+      <div class="footer-note">
+        New message every week — come back and see what Uncle Brian sent next.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById("password").value.trim();
+      const error = document.getElementById("error");
+      const lockScreen = document.getElementById("lock-screen");
+      const siteContent = document.getElementById("site-content");
+
+      // Password is exactly "Bills"
+      if (input === "Bills") {
+        error.textContent = "";
+        lockScreen.style.display = "none";
+        siteContent.style.display = "block";
+      } else {
+        error.textContent = "Incorrect password. Hint: think of your favorite team 😉";
+      }
+    }
+
+    // Allow pressing Enter to submit the password
+    document.getElementById("password").addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        checkPassword();
+      }
+    });
+  </script>
+</body>
+</html>
